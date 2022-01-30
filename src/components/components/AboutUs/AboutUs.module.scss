@@ -1,0 +1,152 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.wrap {
+  padding: 65px;
+  margin-bottom: 57px;
+  text-align: center;
+  background-image: url("../../../assets/img/about-banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 24px;
+
+  @include max-768 {
+    margin-bottom: 30px;
+    padding: 30px;
+  }
+
+  @include max-480 {
+    padding: 20px;
+  }
+}
+
+.title {
+  margin-bottom: 12px;
+  font-size: 48px;
+  font-family: "CeraPro-Bold";
+
+  @include max-1200 {
+    font-size: 38px;
+  }
+
+  @include max-768 {
+    font-size: 30px;
+  }
+
+  @include max-480 {
+    font-size: 24px;
+  }
+}
+
+.subtitle {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+
+  @include max-768 {
+    flex-direction: column-reverse;
+    margin-bottom: 60px;
+  }
+
+  @include max-480 {
+    margin-bottom: 50px;
+  }
+
+  &:last-child {
+    margin-bottom: 110px;
+  }
+}
+
+.image {
+  max-width: 465px;
+  width: 100%;
+  height: 465px;
+  background-image: url("../../../assets/img/about1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 28px;
+
+  @include max-768 {
+    margin-bottom: 30px;
+  }
+
+  @include max-480 {
+    height: 330px;
+  }
+}
+
+.img {
+  max-width: 540px;
+  width: 100%;
+  height: 540px;
+  margin-right: 65px;
+  background-image: url("../../../assets/img/about2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 28px;
+
+  @include max-992 {
+    margin-right: 30px;
+  }
+
+  @include max-768 {
+    margin-right: 0;
+  }
+
+  @include max-480 {
+    height: 350px;
+  }
+}
+
+.inner {
+  max-width: 521px;
+  width: 100%;
+
+  @include max-768 {
+    margin-bottom: 30px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 65px;
+
+    @include max-992 {
+      margin-right: 30px;
+    }
+
+    @include max-768 {
+      margin-right: 0;
+    }
+  }
+}
+
+.heading {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-family: "CeraPro-Bold";
+
+  @include max-768 {
+    font-size: 30px;
+  }
+
+  @include max-480 {
+    font-size: 24px;
+  }
+}
+
+.text {
+  font-size: 18px;
+
+  p:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

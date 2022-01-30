@@ -1,0 +1,242 @@
+@import "../../../../global-styles/_variables.scss";
+@import "../../../../global-styles/_mixins.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $bgcColor;
+
+  @include max-768 {
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &:nth-child(2) {
+    margin-bottom: 25px;
+  }
+
+  &:nth-child(3) {
+    margin-bottom: 22px;
+  }
+
+  &:nth-child(4) {
+    margin-bottom: 19px;
+  }
+}
+
+.img {
+  max-width: 60px;
+  width: 100%;
+  height: 60px;
+  border: 1px solid $mainColor;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-right: 14px;
+
+  @include max-768 {
+    margin-right: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  margin-right: 15px;
+  width: 22%;
+  font-family: "CeraPro-Medium";
+
+  @include max-992 {
+    width: 24%;
+    margin-right: 10px;
+  }
+
+  @include max-768 {
+    width: auto;
+  }
+}
+
+.price {
+  width: 21%;
+  font-family: "CeraPro-Medium";
+  color: $lightColor;
+
+  @include max-768 {
+    width: auto;
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: 21%;
+
+  @include max-992 {
+    width: 20%;
+  }
+
+  @include max-768 {
+    width: auto;
+  }
+
+  button {
+    position: relative;
+    padding: 11px;
+    width: 21px;
+    height: 25px;
+    border-radius: 31px;
+    background: rgb(70, 163, 88);
+    background: linear-gradient(0deg, rgba(70, 163, 88, 1) 0%, rgba(70, 163, 88, 0.8) 100%);
+
+    &:hover {
+      background: linear-gradient(180deg, #46a358 0%, rgba(70, 163, 88, 0.8) 100%);
+    }
+  }
+}
+
+.minus {
+  margin-right: 10px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 2px;
+    background-color: $white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.plus {
+  margin-left: 10px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 2px;
+    background-color: $white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 2px;
+    background-color: $white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.quantity {
+  width: 28px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.total-price {
+  width: 17%;
+
+  @include max-768 {
+    width: auto;
+    font-size: 18px
+  }
+
+  font-family: "CeraPro-Bold";
+  color: $mainColor;
+}
+
+.trash {
+  width: 19px;
+  height: 21px;
+
+  &:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+
+    svg {
+      stroke: #d32727;
+    }
+  }
+
+  svg {
+    stroke: $lightColor;
+  }
+}
+
+.delete {
+  margin-bottom: 18px;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s cubic-bezier(0, 2, 0, 0);
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+.desc {
+  font-size: 14px;
+  font-family: "CeraPro-Medium";
+  color: $lightColor;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-2px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}

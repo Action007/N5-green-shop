@@ -1,0 +1,37 @@
+@import "../../../global-styles/_mixins.scss";
+
+.wrapper {
+  display: flex;
+  margin-bottom: 100px;
+
+  @include max-992 {
+    justify-content: space-around;
+  }
+}
+
+.img {
+  height: 300px;
+  background-image: url("../../../assets/img/shop-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.image {
+  width: 290px;
+  height: 390px;
+  margin-right: 25px;
+
+  @include max-768 {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}

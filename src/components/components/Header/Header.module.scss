@@ -1,0 +1,307 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px 15px 18px;
+  background-color: $white;
+  transition: padding 0.3s ease;
+  z-index: 100;
+
+  &.active {
+    padding: 10px 15px 10px;
+
+    .link a {
+      &::before {
+        bottom: -13px;
+      }
+    }
+
+    .nav {
+      @include max-768 {
+        top: 68px;
+      }
+    }
+  }
+
+  @include max-480 {
+    padding: 10px 15px 10px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: calc(100% - 30px);
+    height: 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.nav {
+  &.active {
+    right: 0;
+  }
+
+  @include max-768 {
+    position: fixed;
+    right: -90%;
+    top: 84px;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    padding: 0 22px;
+    background-color: $white;
+    transition: right 0.3s;
+    transition: right 0.3s ease, top 0.3s ease;
+    z-index: 95;
+  }
+
+  @include max-480 {
+    max-width: 270px;
+    top: 68px;
+  }
+}
+
+.links {
+  display: flex;
+  width: 100%;
+
+  @include max-768 {
+    display: block;
+    position: absolute;
+    left: 22px;
+    top: 10px;
+  }
+
+  li:not(:last-child) {
+    margin-right: 50px;
+
+    @include max-992 {
+      margin-right: 35px;
+    }
+
+    @include max-768 {
+      margin-right: 0;
+    }
+  }
+}
+
+.link a {
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 5px;
+  color: $fontColor;
+
+  @include max-768 {
+    width: calc(100% - 44px);
+    border-bottom: 1px solid rgb(185, 185, 185);
+    padding: 15px 0 15px 0;
+    font-size: 16px;
+  }
+
+  &:hover {
+    font-weight: 700;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    bottom: -21px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: $mainColor;
+    transition: all 0.3s ease;
+
+    @include max-768 {
+      display: none;
+    }
+  }
+
+  &.active {
+    position: relative;
+    font-weight: 700;
+
+    @include max-768 {
+      border-color: $mainColor;
+    }
+
+    &::before {
+      width: 100%;
+
+      @include max-768 {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo {
+  max-width: 150px;
+  width: 100%;
+  height: 35px;
+
+  @include max-480 {
+    max-width: 120px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.basket {
+  position: relative;
+  margin-right: 10px;
+
+  @include max-768 {
+    margin-right: 30px;
+  }
+
+  &:hover {
+    svg {
+      fill: $mainColor;
+    }
+
+    span {
+      background-color: $white;
+      color: $mainColor;
+      border: 1px solid $mainColor;
+    }
+  }
+
+  span {
+    position: absolute;
+    left: 15px;
+    top: -4px;
+    padding: 0px 5px;
+    background-color: $mainColor;
+    color: #fff;
+    font-family: "CeraPro-Medium";
+    font-size: 12px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  svg {
+    fill: #3d3d3d;
+    transition: fill 0.3s ease;
+  }
+}
+
+.burger-wrap {
+  position: relative;
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  @include max-768 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.active {
+    background-color: $mainColor;
+
+    div::before {
+      transform: rotate(45deg);
+      top: 7px;
+      left: 0;
+      background-color: $white;
+    }
+
+    span {
+      transform: scale(0);
+    }
+
+    div::after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+      left: 0;
+      background-color: $white;
+    }
+  }
+
+  div {
+    @include max-768 {
+      position: relative;
+      width: 25px;
+      height: 18px;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 8px;
+      background-color: $mainColor;
+      transition: all 0.3s ease;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $mainColor;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+}
+
+.overall {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #69696933;
+  backdrop-filter: blur(4px);
+  z-index: 30;
+}

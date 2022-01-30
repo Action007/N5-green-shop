@@ -1,0 +1,52 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.wrap {
+  margin-bottom: 110px;
+
+  @include max-768 {
+    margin-bottom: 80px;
+  }
+
+  @include max-480 {
+    margin-bottom: 60px;
+  }
+
+  @include max-360 {
+    margin-bottom: 40px;
+  }
+
+  p {
+    line-height: 1.7;
+    color: $lightColor;
+  }
+}
+
+.title {
+  display: inline-block;
+  color: $mainColor;
+  padding-bottom: 10px;
+  border-bottom: 3px solid $mainColor;
+  font-family: "CeraPro-Bold";
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.inner {
+  p:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  p:last-child {
+    margin-bottom: 18px;
+  }
+}
+
+.heading {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "CeraPro-Bold";
+}
+
+.text {
+  margin-bottom: 18px;
+}

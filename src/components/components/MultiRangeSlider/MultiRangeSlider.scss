@@ -1,0 +1,149 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.multi-range {
+  position: relative;
+  padding: 30px;
+  background-color: #fbfbfb;
+  margin-bottom: 30px;
+}
+
+.multi-range__heading {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-family: "CeraPro-Bold";
+}
+
+.price__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 4px;
+  height: 4px;
+  position: absolute;
+}
+
+.slider__track {
+  background-color: #ededed;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: $mainColor;
+  z-index: 2;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 2px -1px;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  outline: none;
+  width: calc(100% - 55px);
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: $mainColor;
+  border: none;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: $mainColor;
+  border: none;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  pointer-events: all;
+  position: relative;
+}
+
+.price__wrap {
+  padding-top: 20px;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.price__text {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.slider__left-value,
+.slider__right-value {
+  display: inline-block;
+  font-family: "CeraPro-Bold";
+  color: $mainColor;
+}
+
+.slider__left-value {
+  position: relative;
+  margin-right: 15px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+    background-color: $mainColor;
+  }
+}
+
+.price__filter {
+  font-family: "CeraPro-Bold";
+  background-color: $mainColor;
+  color: $white;
+  padding: 8px 25px 7px 26px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.1s cubic-bezier(0, 2, 0, 0), color 0.3s ease, box-shadow 0.3s ease;
+
+  &:active {
+    transform: translateY(5px);
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #46a358;
+    box-shadow: 0px 0px 20px 0px #46a35980;
+  }
+}

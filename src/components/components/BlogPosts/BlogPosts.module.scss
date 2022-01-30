@@ -1,0 +1,150 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.section {
+  margin-bottom: 100px;
+
+  @include max-768 {
+    margin-bottom: 80px;
+  }
+
+  @include max-480 {
+    margin-bottom: 60px;
+  }
+
+  @include max-360 {
+    margin-bottom: 40px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include max-1200 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.title {
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: "CeraPro-Bold";
+  font-size: 30px;
+
+  @include max-992 {
+    font-size: 24px
+  }
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  text-align: center;
+  color: $lightColor;
+  font-size: 14px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 268px;
+  width: 100%;
+  background-color: #fbfbfb;
+
+  @include max-1200 {
+    max-width: 100%;
+    width: 45%;
+    margin-bottom: 30px;
+  }
+
+  @include max-768 {
+    width: 70%;
+  }
+
+  @include max-480 {
+    width: 90%;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+
+    @include max-1200 {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(1),
+  &:nth-child(3) {
+    @include max-1200 {
+      margin-right: 15px;
+    }
+
+    @include max-768 {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: 14px;
+    color: $mainColor;
+    margin-bottom: 5px;
+    font-family: "CeraPro-Medium";
+  }
+}
+
+.img {
+  width: 100%;
+  height: 196px;
+
+  @include max-1200 {
+    height: 240px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.inner {
+  padding: 9px 15px 15px;
+  height: 100%;
+}
+
+.heading {
+  margin-bottom: 7px;
+  font-family: "CeraPro-Bold";
+  font-size: 20px;
+  @include line-clamp2;
+}
+
+.text {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: $lightColor;
+  @include line-clamp2;
+}
+
+.button {
+  font-family: "CeraPro-Medium";
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $mainColor;
+  }
+
+  &:hover svg {
+    fill: $mainColor;
+    transform: translate(10px, 5px);
+  }
+
+  svg {
+    transform: translate(5px, 5px);
+    fill: $fontColor;
+    transition: all 0.3s ease;
+  }
+}

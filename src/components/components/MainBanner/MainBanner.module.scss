@@ -1,0 +1,131 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 40px;
+  background: linear-gradient(97.77deg, rgba(245, 245, 245, 0.5) -23.46%, rgba(245, 245, 245, 0.5) 107.51%);
+  margin-bottom: 46px;
+
+  @include max-992 {
+    padding: 30px;
+  }
+
+  @include max-768 {
+    padding: 20px;
+  }
+
+  @include max-480 {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.wrap {
+  max-width: 610px;
+  padding-top: 68px;
+  margin-right: 15px;
+
+  @include max-1200 {
+    max-width: 450px;
+  }
+
+  @include max-992 {
+    max-width: 350px;
+  }
+
+  @include max-768 {
+    max-width: 200px;
+    padding-top: 20px;
+    margin-right: 5px;
+  }
+
+  @include max-480 {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+.span {
+  display: block;
+  font-family: "CeraPro-Medium";
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-family: "CeraPro-Black";
+  font-size: 70px;
+  margin-bottom: 10px;
+  line-height: 1;
+
+  @include max-1200 {
+    font-size: 50px;
+  }
+
+  @include max-992 {
+    font-size: 40px;
+  }
+
+  @include max-768 {
+    font-size: 26px;
+  }
+
+  span {
+    color: $mainColor;
+  }
+}
+
+.text {
+  margin-bottom: 44px;
+  line-height: 1.6;
+  color: $lightColor;
+
+  @include max-768 {
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 11px 27px 9px 26px;
+  background-color: $mainColor;
+  font-family: "CeraPro-Medium";
+  color: $white;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  @include max-768 {
+    padding: 9px 22px 7px 21px;
+    font-size: 14px;
+  }
+
+  
+  @include max-480 {
+    margin-bottom: 30px;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $mainColor;
+    box-shadow: 0px 0px 20px 0px #46a35980;
+  }
+}
+
+.img {
+  max-width: 403px;
+  width: 100%;
+
+  @include max-992 {
+    max-width: 350px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

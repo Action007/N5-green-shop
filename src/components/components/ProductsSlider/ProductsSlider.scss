@@ -1,0 +1,35 @@
+@import "../../../global-styles/_variables.scss";
+
+.products-slider {
+  margin-bottom: 100px;
+
+  &__heading {
+    display: block;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: $mainColor;
+    font-family: "CeraPro-Bold";
+    border-bottom: 1px solid #46a35949;
+  }
+
+  .swiper {
+    padding: 20px 20px 60px;
+  }
+
+  .swiper-pagination {
+    transform: translateY(10px);
+  }
+
+  .swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+    border: 1px solid $mainColor;
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $mainColor;
+  }
+}

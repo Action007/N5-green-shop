@@ -1,0 +1,39 @@
+@import "../../../global-styles/_variables.scss";
+@import "../../../global-styles/_mixins.scss";
+
+.breadcrumbs {
+  display: flex;
+  padding: 23px 0 34px 0;
+
+  button:hover {
+    color: $mainColor;
+  }
+}
+
+.span {
+  position: relative;
+  font-family: "CeraPro-Bold";
+  font-size: 15px;
+  margin-right: 16px;
+}
+
+.link {
+  position: relative;
+  margin-right: 16px;
+  color: $fontColor;
+
+  &:hover {
+    color: $mainColor;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: -8px;
+    bottom: 2px;
+    width: 1px;
+    height: 16px;
+    transform: rotate(30deg);
+    background-color: $fontColor;
+  }
+}
